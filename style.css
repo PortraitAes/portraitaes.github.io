@@ -1,7 +1,7 @@
 :root {
   --background: #f7f7f3;
   --surface: #ffffff;
-  --text: #222b38;
+  --text: #000000;
   --muted: #687283;
   --line: #dce1e6;
   --accent: #315f89;
@@ -184,7 +184,7 @@ sup {
   max-width: 940px;
   margin-inline: auto;
   padding: 20px 14px 22px;
-  color: var(--muted);
+  color: var(--text);
   font-size: 14px;
   text-align: center;
 }
@@ -211,7 +211,7 @@ sup {
 .section-copy {
   max-width: none;
   margin: 24px 0 0;
-  color: var(--muted);
+  color: var(--text);
   font-size: 17px;
 }
 
@@ -252,7 +252,7 @@ sup {
 
 .info-card p {
   margin: 12px 0 0;
-  color: var(--muted);
+  color: var(--text);
   font-size: 15px;
 }
 
@@ -264,21 +264,22 @@ sup {
 }
 
 .result-grid {
-  margin-top: 38px;
+  max-width: 680px;
+  margin: 30px auto 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .result-card {
-  padding: 28px;
+  padding: 20px 22px;
   border: 1px solid var(--line);
   border-radius: 12px;
   text-align: center;
 }
 
 .metric-row {
-  margin-top: 20px;
+  margin-top: 14px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
@@ -286,14 +287,14 @@ sup {
 
 .metric-row p {
   margin: 0;
-  padding-top: 16px;
+  padding-top: 11px;
   border-top: 1px solid var(--line);
 }
 
 .metric-row strong {
   display: block;
   color: var(--accent);
-  font-size: 34px;
+  font-size: 28px;
   line-height: 1.1;
   letter-spacing: -0.04em;
 }
@@ -301,7 +302,7 @@ sup {
 .metric-row span {
   display: block;
   margin-top: 5px;
-  color: var(--muted);
+  color: var(--text);
   font-size: 14px;
 }
 
@@ -412,7 +413,7 @@ footer {
   .resource-link { justify-content: center; }
   .paper-name { font-size: 48px; }
   .paper-subtitle { font-size: 22px; }
-  .metric-row strong { font-size: 30px; }
+  .metric-row strong { font-size: 27px; }
   .carousel-heading { align-items: flex-start; flex-direction: column; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
