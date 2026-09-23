@@ -27,7 +27,13 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
-img { display: block; max-width: 100%; }
+img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 a { color: inherit; }
 button, input { font: inherit; }
 button { color: inherit; }
@@ -231,7 +237,7 @@ sup { position: relative; top: -0.18em; color: var(--blue); font-size: 0.67em; }
   background: var(--surface);
   box-shadow: var(--shadow);
 }
-.hero-figure img { width: 100%; border-radius: 13px; }
+.hero-figure img { width: 100%; height: auto; object-fit: contain; border-radius: 13px; }
 .hero-figure figcaption, .method-figure figcaption, .switcher-figure figcaption, .examples-overview figcaption {
   padding: 22px 12px 24px;
   color: var(--muted);
@@ -346,7 +352,6 @@ figcaption strong { color: var(--ink); }
 .figure-tab:hover { color: var(--ink); }
 .figure-tab.is-active { color: var(--blue); background: var(--blue-soft); }
 .figure-stage {
-  min-height: 480px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -354,7 +359,7 @@ figcaption strong { color: var(--ink); }
   background: #fbfcfd;
 }
 .figure-slide { width: 100%; }
-.figure-slide img { width: 100%; }
+.figure-slide img { width: 100%; height: auto; object-fit: contain; }
 
 .method-flow {
   margin: 42px 0 0;
@@ -416,7 +421,7 @@ th { color: var(--muted); background: #f6f7f9; font-size: 10px; letter-spacing: 
 tbody tr:hover { background: #fafbfc; }
 tr.ours { color: var(--blue); background: var(--blue-soft); }
 .distribution-figure { margin: 0; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
-.distribution-figure img { width: 100%; }
+.distribution-figure img { width: 100%; height: auto; object-fit: contain; }
 .distribution-figure figcaption { margin-top: 16px; color: var(--muted); font-size: 12px; text-align: center; }
 
 .examples-overview { max-width: 760px; margin-inline: auto; margin-top: 42px; }
@@ -450,7 +455,7 @@ tr.ours { color: var(--blue); background: var(--blue-soft); }
 }
 .carousel-controls button:hover { color: var(--blue); border-color: #b9c9d8; }
 .carousel-stage { overflow: hidden; border-radius: 13px; background: white; }
-.reasoning-slide img { width: 100%; }
+.reasoning-slide img { width: 100%; height: auto; object-fit: contain; }
 
 footer { padding: 42px 0; border-top: 1px solid var(--line); background: #eef0f1; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
@@ -494,7 +499,6 @@ footer { padding: 42px 0; border-top: 1px solid var(--line); background: #eef0f1
   .stat:nth-child(4) { border-left: 1px solid var(--line); }
   .stat:nth-child(5) { border-left: 0; }
   .switcher-figure, .method-figure, .examples-overview { padding: 8px 8px 0; border-radius: 16px; }
-  .figure-stage { min-height: 235px; }
   .method-flow { grid-template-columns: 1fr 1fr; }
   .flow-step { min-height: 116px; }
   .result-card strong { font-size: 26px; }

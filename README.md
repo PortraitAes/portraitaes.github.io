@@ -16,4 +16,4 @@ Then open `http://localhost:8000`.
 
 ## Source
 
-Page descriptions, results, and figures follow the `0919.tex` manuscript snapshot.
+Page descriptions and results follow the `0919.tex` manuscript snapshot. Displayed paper figures are the original, unmodified SVG exports from its `fig0909` directory and retain their native aspect ratios.
