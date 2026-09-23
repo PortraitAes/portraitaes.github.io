@@ -2,7 +2,7 @@
 
 Static project page for **PortraitAes: Intent-Conditioned Structured Portrait Aesthetic Assessment**.
 
-Live page: <https://hzxiong23.github.io/PortraitAes/>
+Live page: <https://portraitaes.github.io/>
 
 The page is deployed from the repository root with GitHub Pages. It uses plain HTML, CSS, and JavaScript; no build step is required.
 
