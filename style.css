@@ -7,7 +7,7 @@
   --accent: #315f89;
   --accent-soft: #edf2f6;
   --shell: min(960px, calc(100vw - 40px));
-  --wide-shell: min(1180px, calc(100vw - 40px));
+  --wide-shell: min(960px, calc(100vw - 40px));
 }
 
 * { box-sizing: border-box; }
@@ -46,7 +46,7 @@ button { font: inherit; }
 }
 
 .example-shell {
-  width: min(760px, calc(100vw - 40px));
+  width: var(--shell);
   margin-inline: auto;
 }
 
@@ -205,10 +205,11 @@ sup {
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.035em;
+  text-align: center;
 }
 
 .section-copy {
-  max-width: 880px;
+  max-width: none;
   margin: 24px 0 0;
   color: var(--muted);
   font-size: 17px;
@@ -216,7 +217,7 @@ sup {
 
 .section-copy strong { color: var(--text); }
 
-.section-intro { max-width: 820px; }
+.section-intro { max-width: none; }
 
 .info-grid {
   margin-top: 38px;
@@ -258,7 +259,7 @@ sup {
 .section-figure { margin-top: 42px; }
 
 .method-figure {
-  max-width: 1060px;
+  max-width: 960px;
   margin-inline: auto;
 }
 
@@ -380,10 +381,10 @@ footer {
 @media (max-width: 760px) {
   :root {
     --shell: min(100% - 28px, 960px);
-    --wide-shell: min(100% - 20px, 1180px);
+    --wide-shell: min(100% - 28px, 960px);
   }
 
-  .example-shell { width: min(100% - 28px, 760px); }
+  .example-shell { width: min(100% - 28px, 960px); }
   .hero-band { padding: 78px 0 54px; }
   .paper-name { font-size: 54px; }
   .paper-subtitle { margin-top: 18px; font-size: 24px; }
