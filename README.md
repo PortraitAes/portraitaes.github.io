@@ -16,4 +16,4 @@ Then open `http://localhost:8000`.
 
 ## Source
 
-Page descriptions and results follow the `0919.tex` manuscript snapshot. Displayed paper figures are the original, unmodified SVG exports from its `fig0909` directory and retain their native aspect ratios.
+Page descriptions and results follow the `0919.tex` manuscript snapshot. The repository mirrors every active `\includegraphics` PDF under the same `fig0909` path. Web previews are rendered directly from those PDFs and retain each PDF page's native aspect ratio; clicking a figure opens the exact source PDF.
