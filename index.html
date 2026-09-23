@@ -15,27 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260923-pdf-source">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css?v=20260923-redesign">
+    <script src="script.js?v=20260923-redesign" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="PortraitAes home">
-        <span class="brand-mark" aria-hidden="true">P</span>
-        <span>PortraitAes</span>
-      </a>
-      <nav class="site-nav" aria-label="Page sections">
-        <a href="#benchmark">Benchmark</a>
-        <a href="#method">Method</a>
-        <a href="#results">Results</a>
-        <a href="#examples">Examples</a>
-      </nav>
-    </header>
-
-    <main id="top">
+    <main>
       <section class="hero-band" aria-labelledby="paper-title">
         <div class="shell hero">
-          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Project page · 2026</p>
+          <p class="page-note">Project page · 2026</p>
           <h1 id="paper-title">
             <span class="paper-name">PortraitAes</span>
             <span class="paper-subtitle">Intent-Conditioned Structured Portrait Aesthetic Assessment</span>
@@ -59,258 +46,220 @@
           </div>
 
           <nav class="resource-nav" aria-label="Project resources">
-            <span class="resource-link is-muted" aria-label="Paper link coming soon" title="Paper link coming soon">
+            <span class="resource-link resource-muted" aria-label="Paper link coming soon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                 <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="8" y1="13" x2="16" y2="13"></line>
-                <line x1="8" y1="17" x2="16" y2="17"></line>
               </svg>
-              <span>Paper</span><small>soon</small>
+              Paper · coming soon
             </span>
             <a class="resource-link" href="https://github.com/hzxiong23/PortraitAes" target="_blank" rel="noreferrer">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.28-.36 6.72-1.61 6.72-7.5A5.8 5.8 0 0 0 19.2 3.8 5.4 5.4 0 0 0 19 0s-1.8-.6-5 1.9a13.4 13.4 0 0 0-7 0C3.8-.6 2 0 2 0a5.4 5.4 0 0 0-.2 3.8A5.8 5.8 0 0 0 .3 7c0 5.9 3.4 7.1 6.7 7.5A4.8 4.8 0 0 0 6 18v4"></path>
                 <path d="M9 18c-4.5 2-5-2-7-2"></path>
               </svg>
-              <span>Repository</span>
+              Repository
             </a>
           </nav>
         </div>
       </section>
 
-      <section class="visual-band" aria-labelledby="overview-visual-heading">
+      <section class="visual-band" aria-labelledby="overview-heading">
         <div class="wide-shell">
-          <h2 class="visually-hidden" id="overview-visual-heading">PortraitAes-Bench overview</h2>
-          <figure class="hero-figure">
-            <a class="figure-link" href="fig0909/fig1.pdf" target="_blank" rel="noreferrer" title="Open the exact fig0909/fig1.pdf used by 0919.tex">
-              <img src="fig0909/fig1.png" width="1440" height="612" alt="PortraitAes-Bench routes each portrait to a photographic intent, evaluates it with six rubric-specific specialists, and fuses their structured judgments.">
+          <h2 class="visually-hidden" id="overview-heading">PortraitAes-Bench overview</h2>
+          <figure class="paper-figure">
+            <a href="fig0909/fig1.pdf" target="_blank" rel="noreferrer" title="Open fig0909/fig1.pdf">
+              <img src="fig0909/fig1.png" width="1440" height="612" alt="Overview of PortraitAes-Bench.">
             </a>
             <figcaption>
-              <strong>PortraitAes-Bench turns portrait aesthetics into a structured, intent-conditioned task.</strong>
-              Each portrait is routed to one of nine photographic intents and evaluated across six dimensions and 22 secondary criteria before intent-weighted score fusion.
+              <strong>PortraitAes-Bench.</strong> Each portrait is routed to one of nine photographic intents and evaluated by six specialists spanning 22 secondary criteria.
             </figcaption>
           </figure>
         </div>
       </section>
 
       <section class="abstract-band section-band" aria-labelledby="abstract-heading">
-        <div class="shell prose-shell">
-          <p class="section-kicker">Overview</p>
+        <div class="shell">
           <h2 class="section-title" id="abstract-heading">Abstract</h2>
-          <p class="lead-copy">
-            Portrait aesthetic assessment asks how effectively a human-centered image fulfills its photographic intent. The same blur, pose, lighting, or framing choice may serve one intent but undermine another, yet existing methods usually predict a single score or omit intent altogether.
+          <p class="section-copy">
+            Portrait aesthetic assessment measures how effectively a human-centered image fulfills its photographic intent. Existing methods usually predict one aesthetic score or use general-purpose multimodal models without conditioning on intent. This matters because the same blur, pose, lighting, or framing choice may support one purpose but weaken another.
           </p>
           <p class="section-copy">
-            <strong>PortraitAes-Bench</strong> provides expert-authored rubrics for nine intents, six first-level dimensions, and 22 secondary criteria. Its router–specialist–fusion workflow yields structured scores, semantic labels, visible-evidence rationales, and intent-conditioned overall ratings. Trained with the same seven-task structure, <strong>PortraitAes</strong> combines multi-task supervision, Gaussian score calibration, and within-dimension cross-image ranking. It reaches 0.924 PLCC / 0.934 SRCC on the standard benchmark and 0.829 / 0.795 on the hard-case set.
+            We introduce <strong>PortraitAes-Bench</strong>, an 11K-scale benchmark built from expert-authored rubrics for nine photographic intents, six dimensions, and 22 secondary criteria. Following its router–specialist–fusion structure, <strong>PortraitAes</strong> learns structured judgments with multi-task supervision, Gaussian score calibration, and within-dimension cross-image ranking.
           </p>
         </div>
       </section>
 
       <section class="motivation-band section-band" aria-labelledby="motivation-heading">
         <div class="shell">
-          <p class="section-kicker">Why it matters</p>
-          <h2 class="section-title" id="motivation-heading">Aesthetic quality depends on intent</h2>
+          <h2 class="section-title" id="motivation-heading">Motivation</h2>
           <p class="section-copy section-intro">
-            Portraits may be functional, commercial, documentary, social, or artistic. Useful assessment must identify the photographic context, inspect visible evidence under explicit criteria, and preserve ordering across images.
+            Portraits serve functional, commercial, documentary, social, and artistic purposes. A useful assessor must identify that purpose, evaluate visible evidence under explicit criteria, and keep scores comparable across images.
           </p>
-          <div class="card-grid card-grid-three">
-            <article class="card accent-blue">
-              <span class="card-index">01</span>
-              <h3>One score hides the cause</h3>
-              <p>A holistic rating cannot show whether a weakness comes from structure, composition, image quality, tone, theme and style, or emotion.</p>
+
+          <div class="info-grid">
+            <article class="info-card">
+              <h3>Intent matters</h3>
+              <p>The same visual choice can be appropriate for one photographic intent and harmful for another.</p>
             </article>
-            <article class="card accent-coral">
-              <span class="card-index">02</span>
-              <h3>Rules change with purpose</h3>
-              <p>Technical cleanliness may be essential for a functional portrait, while blur or unconventional framing can support a narrative or artistic one.</p>
+            <article class="info-card">
+              <h3>One score is not enough</h3>
+              <p>Structured dimensions reveal where a portrait succeeds or fails instead of hiding the cause in one number.</p>
             </article>
-            <article class="card accent-teal">
-              <span class="card-index">03</span>
-              <h3>Calibration is not ranking</h3>
-              <p>Accurate pointwise scores do not guarantee the correct order between visually close portraits. The model must learn both.</p>
+            <article class="info-card">
+              <h3>Ordering matters</h3>
+              <p>Pointwise accuracy alone does not guarantee the correct ranking between visually similar portraits.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="benchmark-band section-band" id="benchmark" aria-labelledby="benchmark-heading">
+      <section class="benchmark-band section-band" aria-labelledby="benchmark-heading">
         <div class="shell">
-          <p class="section-kicker">PortraitAes-Bench</p>
-          <h2 class="section-title" id="benchmark-heading">From photographic expertise to executable judgments</h2>
+          <h2 class="section-title" id="benchmark-heading">Benchmark</h2>
           <p class="section-copy section-intro">
-            The benchmark contains 1.6K portraits expanded into seven linked tasks per image: one intent router and six dimension specialists. Each record keeps the intermediate evidence needed for task-specific evaluation and auditable score fusion.
+            PortraitAes-Bench contains 1.6K portraits expanded into approximately 11K linked task records. Each image produces one intent-routing record and six specialist records for structure, composition, image quality, tone, theme and style, and emotion.
           </p>
-
-          <div class="stat-grid" aria-label="Benchmark statistics">
-            <div class="stat"><strong>1.6K</strong><span>portraits</span></div>
-            <div class="stat"><strong>~11K</strong><span>task records</span></div>
-            <div class="stat"><strong>9</strong><span>photographic intents</span></div>
-            <div class="stat"><strong>6</strong><span>specialist dimensions</span></div>
-            <div class="stat"><strong>22</strong><span>secondary criteria</span></div>
-          </div>
-
-          <div class="intent-list" aria-label="Nine photographic intents">
-            <span>Functional</span><span>Commercial</span><span>Narrative</span><span>Aesthetic</span><span>Social</span><span>Artistic</span><span>Hybrid</span><span>Snapshot</span><span>Symbolic</span>
-          </div>
-
-          <figure class="switcher-figure" data-figure-switcher>
-            <div class="figure-tabs" role="tablist" aria-label="Benchmark figure views">
-              <button class="figure-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="benchmark-slide-overview" data-figure-index="0">Task structure</button>
-              <button class="figure-tab" type="button" role="tab" aria-selected="false" aria-controls="benchmark-slide-construction" data-figure-index="1">Construction pipeline</button>
-            </div>
-            <div class="figure-stage">
-              <div class="figure-slide is-active" id="benchmark-slide-overview" role="tabpanel">
-                <a class="figure-link" href="fig0909/fig1.pdf" target="_blank" rel="noreferrer" title="Open fig0909/fig1.pdf">
-                  <img src="fig0909/fig1.png" width="1440" height="612" alt="Task structure of PortraitAes-Bench.">
-                </a>
-              </div>
-              <div class="figure-slide" id="benchmark-slide-construction" role="tabpanel" hidden>
-                <a class="figure-link" href="fig0909/fig2.pdf" target="_blank" rel="noreferrer" title="Open fig0909/fig2.pdf">
-                  <img src="fig0909/fig2.png" width="1440" height="440" alt="Construction pipeline of PortraitAes-Bench, from expert rubric design through annotation, quality control, and score fusion.">
-                </a>
-              </div>
-            </div>
-            <figcaption><strong>Structured by design.</strong> Experts define the rubrics; Gemini 3 Flash executes the router and specialist roles; schema checks, Qwen3.5 Flash screening, and expert review precede rule-based fusion.</figcaption>
-          </figure>
         </div>
-      </section>
 
-      <section class="method-band section-band" id="method" aria-labelledby="method-heading">
-        <div class="shell">
-          <p class="section-kicker">PortraitAes</p>
-          <h2 class="section-title" id="method-heading">Structured supervision, calibrated scores, consistent order</h2>
-          <p class="section-copy section-intro">
-            PortraitAes adapts Qwen3.5-VL-9B through a two-stage procedure. Multi-task SFT learns the router and six rubric-specific specialists; rank-aligned optimization then refines numerical calibration and cross-image order while preserving semantic and format constraints.
-          </p>
-
-          <div class="method-flow" aria-label="PortraitAes training stages">
-            <div class="flow-step"><span>1</span><strong>Multi-task SFT</strong><small>7 structured tasks</small></div>
-            <i aria-hidden="true">→</i>
-            <div class="flow-step"><span>2</span><strong>Gaussian calibration</strong><small>scores + subcriteria</small></div>
-            <i aria-hidden="true">→</i>
-            <div class="flow-step"><span>3</span><strong>Cross-group BPR</strong><small>same-dimension order</small></div>
-            <i aria-hidden="true">→</i>
-            <div class="flow-step"><span>4</span><strong>Intent fusion</strong><small>traceable overall score</small></div>
-          </div>
-
-          <figure class="method-figure">
-            <a class="figure-link" href="fig0909/fig5.pdf" target="_blank" rel="noreferrer" title="Open the exact fig0909/fig5.pdf used by 0919.tex">
-              <img src="fig0909/fig5.png" width="1320" height="732" alt="PortraitAes reward design combines Gaussian score calibration with cross-group same-dimension ranking, semantic consistency, and output-format rewards.">
+        <div class="wide-shell">
+          <figure class="paper-figure section-figure">
+            <a href="fig0909/fig2.pdf" target="_blank" rel="noreferrer" title="Open fig0909/fig2.pdf">
+              <img src="fig0909/fig2.png" width="1440" height="440" alt="Construction pipeline of PortraitAes-Bench.">
             </a>
-            <figcaption><strong>Rank-aligned optimization.</strong> Gaussian rewards anchor each prediction to its rubric-derived target. Cross-group BPR penalizes ordinal inversions only between valid examples from the same specialist dimension.</figcaption>
+            <figcaption>
+              <strong>Benchmark construction.</strong> Expert rubrics define the router and specialist roles; schema checks, model screening, and expert review precede intent-weighted fusion.
+            </figcaption>
           </figure>
+        </div>
 
-          <div class="card-grid card-grid-two">
-            <article class="card compact-card accent-blue">
-              <h3>Seven-task structured SFT</h3>
-              <p>10,286 training images yield approximately 72K examples across intent routing and six specialist tasks. LoRA is applied to the language backbone while the visual encoder and aligner remain frozen.</p>
+        <div class="shell">
+          <div class="info-grid">
+            <article class="info-card">
+              <h3>Expert rubrics</h3>
+              <p>Nine intents, six dimensions, 22 criteria, score anchors, and veto or cap rules define what each role evaluates.</p>
             </article>
-            <article class="card compact-card accent-teal">
-              <h3>Absolute calibration</h3>
-              <p>A Gaussian reward scores numerical distance for both the primary dimension score and its evidence-bearing subcriteria.</p>
+            <article class="info-card">
+              <h3>Structured records</h3>
+              <p>Records retain scores, semantic labels, subcriteria, visible-evidence rationales, and rule decisions.</p>
             </article>
-            <article class="card compact-card accent-lavender">
-              <h3>Relative ranking</h3>
-              <p>Valid cross-group examples are compared only within the same specialist dimension and only when their reference-score gap defines a reliable order.</p>
-            </article>
-            <article class="card compact-card accent-gold">
-              <h3>Structured outputs retained</h3>
-              <p>Semantic and format rewards preserve rubric-compatible labels and parseable records; router outputs use intent-category and fusion-weight rewards.</p>
+            <article class="info-card">
+              <h3>Intent-weighted fusion</h3>
+              <p>The final score combines available specialist judgments using the importance weights of the routed intent.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="results-band section-band" id="results" aria-labelledby="results-heading">
+      <section class="method-band section-band" aria-labelledby="method-heading">
         <div class="shell">
-          <p class="section-kicker">Experiments</p>
-          <h2 class="section-title" id="results-heading">Strong calibration and ranking on standard and hard cases</h2>
+          <h2 class="section-title" id="method-heading">Method</h2>
           <p class="section-copy section-intro">
-            Evaluation uses PLCC for score calibration and SRCC for ordinal consistency. The standard benchmark contains 1.6K images / 11K task examples; the held-out hard-case set contains 1K images / 7K task examples with a deliberately compressed score range.
+            PortraitAes adapts Qwen3.5-VL-9B in two stages. Multi-task supervised fine-tuning first learns the intent router and six rubric-specific specialists. Rank-aligned optimization then improves numerical calibration and cross-image order while retaining structured outputs.
+          </p>
+        </div>
+
+        <div class="wide-shell">
+          <figure class="paper-figure section-figure method-figure">
+            <a href="fig0909/fig5.pdf" target="_blank" rel="noreferrer" title="Open fig0909/fig5.pdf">
+              <img src="fig0909/fig5.png" width="1320" height="732" alt="Gaussian calibration and cross-group same-dimension ranking in PortraitAes.">
+            </a>
+            <figcaption>
+              <strong>Rank-aligned optimization.</strong> Gaussian calibration anchors predictions to rubric-derived scores, while same-dimension cross-group ranking penalizes ordinal inversions.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="shell">
+          <div class="info-grid">
+            <article class="info-card">
+              <h3>Multi-task supervision</h3>
+              <p>10,286 training images provide approximately 72K examples across the router and six specialist tasks.</p>
+            </article>
+            <article class="info-card">
+              <h3>Score calibration</h3>
+              <p>A Gaussian reward measures numerical distance for each specialist score and its rubric subcriteria.</p>
+            </article>
+            <article class="info-card">
+              <h3>Cross-image ranking</h3>
+              <p>Valid examples are compared only within the same dimension and when their reference gap defines a reliable order.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="results-band section-band" aria-labelledby="results-heading">
+        <div class="shell">
+          <h2 class="section-title" id="results-heading">Results</h2>
+          <p class="section-copy section-intro">
+            PortraitAes achieves the strongest overall correlations among the evaluated general-purpose multimodal models and specialized aesthetic baselines.
           </p>
 
-          <div class="result-highlights">
-            <article class="result-card primary-result">
-              <span>Standard benchmark</span>
-              <div><strong>0.924</strong><small>PLCC</small></div>
-              <div><strong>0.934</strong><small>SRCC</small></div>
+          <div class="result-grid" aria-label="PortraitAes overall results">
+            <article class="result-card">
+              <h3>Standard benchmark</h3>
+              <div class="metric-row">
+                <p><strong>0.924</strong><span>PLCC</span></p>
+                <p><strong>0.934</strong><span>SRCC</span></p>
+              </div>
             </article>
             <article class="result-card">
-              <span>Hard-case set</span>
-              <div><strong>0.829</strong><small>PLCC</small></div>
-              <div><strong>0.795</strong><small>SRCC</small></div>
-            </article>
-            <article class="result-card">
-              <span>Cross-BPR gain on Hard</span>
-              <div><strong>+0.040</strong><small>PLCC</small></div>
-              <div><strong>+0.040</strong><small>SRCC</small></div>
+              <h3>Hard-case set</h3>
+              <div class="metric-row">
+                <p><strong>0.829</strong><span>PLCC</span></p>
+                <p><strong>0.795</strong><span>SRCC</span></p>
+              </div>
             </article>
           </div>
+        </div>
 
-          <div class="results-layout">
-            <div class="table-wrap">
-              <table>
-                <caption>Overall score correlation (PLCC / SRCC)</caption>
-                <thead>
-                  <tr><th scope="col">Model</th><th scope="col">Standard</th><th scope="col">Hard</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Qwen3.5-VL-9B</td><td>0.857 / 0.874</td><td>0.649 / 0.629</td></tr>
-                  <tr><td>Qwen3.5 Flash</td><td>0.804 / 0.763</td><td>0.615 / 0.635</td></tr>
-                  <tr><td>ArtiMuse</td><td>0.785 / 0.804</td><td>0.501 / 0.495</td></tr>
-                  <tr><td>Q-Align</td><td>0.707 / 0.724</td><td>0.374 / 0.348</td></tr>
-                  <tr><td>UniPercept</td><td>0.703 / 0.729</td><td>0.352 / 0.358</td></tr>
-                  <tr><td>PortraitCraft-4B</td><td>0.652 / 0.785</td><td>0.406 / 0.400</td></tr>
-                  <tr><td>InternVL3-8B</td><td>0.607 / 0.668</td><td>0.210 / 0.215</td></tr>
-                  <tr><td>HumanAesExpert-8B</td><td>0.457 / 0.499</td><td>0.127 / 0.154</td></tr>
-                  <tr class="ours"><td>PortraitAes (Ours)</td><td><strong>0.924 / 0.934</strong></td><td><strong>0.829 / 0.795</strong></td></tr>
-                </tbody>
-              </table>
-            </div>
-            <figure class="distribution-figure">
-              <a class="figure-link" href="fig0909/fig4.pdf" target="_blank" rel="noreferrer" title="Open fig0909/fig4.pdf">
-                <img src="fig0909/fig4.png" width="1440" height="530" alt="Overall score distributions for the standard and hard-case PortraitAes-Bench evaluations.">
-              </a>
-              <figcaption>The hard-case set narrows the score range to stress fine-grained ranking.</figcaption>
-            </figure>
-          </div>
+        <div class="wide-shell">
+          <figure class="paper-figure section-figure">
+            <a href="fig0909/fig4.pdf" target="_blank" rel="noreferrer" title="Open fig0909/fig4.pdf">
+              <img src="fig0909/fig4.png" width="1440" height="530" alt="Intent-conditioned overall-score distributions for the standard and hard-case evaluations.">
+            </a>
+            <figcaption>
+              <strong>Overall-score distributions.</strong> The standard benchmark spans a broad range, while the hard-case set concentrates visually similar portraits for fine-grained ranking.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="examples-band section-band" id="examples" aria-labelledby="examples-heading">
+      <section class="examples-band section-band" aria-labelledby="examples-heading">
         <div class="shell">
-          <p class="section-kicker">Qualitative examples</p>
-          <h2 class="section-title" id="examples-heading">Scores that retain their reasons</h2>
+          <h2 class="section-title" id="examples-heading">Examples</h2>
           <p class="section-copy section-intro">
-            PortraitAes predicts an intent, six specialist scores, and dimension-level explanations grounded in visible evidence. The examples below show both high- and low-scoring portraits without collapsing their differences into one opaque number.
+            The model predicts an intent-conditioned overall score together with six specialist scores and dimension-level explanations grounded in visible evidence.
           </p>
+        </div>
 
-          <figure class="examples-overview">
-            <a class="figure-link" href="fig0909/selected_cases_0916_clean/fig7_selected_score_cases.pdf" target="_blank" rel="noreferrer" title="Open the exact PDF used by 0919.tex">
-              <img src="fig0909/selected_cases_0916_clean/fig7_selected_score_cases.png" width="1440" height="1740" alt="Twelve portrait examples from six intent categories with overall and specialist scores.">
+        <div class="example-shell">
+          <figure class="paper-figure section-figure example-overview">
+            <a href="fig0909/selected_cases_0916_clean/fig7_selected_score_cases.pdf" target="_blank" rel="noreferrer" title="Open the exact qualitative PDF used by 0919.tex">
+              <img src="fig0909/selected_cases_0916_clean/fig7_selected_score_cases.png" width="1440" height="1740" alt="Twelve portrait examples across six intent categories with overall and specialist scores.">
             </a>
-            <figcaption><strong>Twelve portraits across six intent categories.</strong> Colored bars report structure, composition, image quality, tone, theme and style, and emotion.</figcaption>
+            <figcaption>
+              <strong>Structured predictions.</strong> Twelve portraits across six intent categories, with colored bars for the six specialist scores.
+            </figcaption>
           </figure>
+        </div>
 
+        <div class="wide-shell">
           <div class="reasoning-carousel" data-reasoning-carousel>
-            <div class="carousel-head">
-              <div>
-                <span class="carousel-label">Dimension-level reasoning</span>
-                <h3 data-carousel-title>Aesthetic portrait · 3.97 / 5</h3>
-              </div>
+            <div class="carousel-heading">
+              <h3 data-carousel-title>Aesthetic portrait · 3.97 / 5</h3>
               <div class="carousel-controls">
-                <button type="button" data-carousel-prev aria-label="Previous example">←</button>
+                <button type="button" data-carousel-prev aria-label="Previous explanation">←</button>
                 <span><b data-carousel-current>1</b> / 2</span>
-                <button type="button" data-carousel-next aria-label="Next example">→</button>
+                <button type="button" data-carousel-next aria-label="Next explanation">→</button>
               </div>
             </div>
             <div class="carousel-stage">
-              <a class="reasoning-slide is-active figure-link" href="fig0909/selected_cases_0916_clean/reasoning_face_0002.pdf" target="_blank" rel="noreferrer" data-title="Aesthetic portrait · 3.97 / 5">
-                <img src="fig0909/selected_cases_0916_clean/reasoning_face_0002.png" width="1440" height="1080" alt="Dimension-level aesthetic explanations for an aesthetic portrait with an overall score of 3.97 out of 5.">
+              <a class="reasoning-slide" href="fig0909/selected_cases_0916_clean/reasoning_face_0002.pdf" target="_blank" rel="noreferrer" data-title="Aesthetic portrait · 3.97 / 5">
+                <img src="fig0909/selected_cases_0916_clean/reasoning_face_0002.png" width="1440" height="1080" alt="Dimension-level explanations for an aesthetic portrait with an overall score of 3.97.">
               </a>
-              <a class="reasoning-slide figure-link" href="fig0909/selected_cases_0916_clean/reasoning_qwen_0008.pdf" target="_blank" rel="noreferrer" data-title="Snapshot · 2.61 / 5" hidden>
-                <img src="fig0909/selected_cases_0916_clean/reasoning_qwen_0008.png" width="1440" height="1080" alt="Dimension-level aesthetic explanations for a snapshot with an overall score of 2.61 out of 5.">
+              <a class="reasoning-slide" href="fig0909/selected_cases_0916_clean/reasoning_qwen_0008.pdf" target="_blank" rel="noreferrer" data-title="Snapshot · 2.61 / 5" hidden>
+                <img src="fig0909/selected_cases_0916_clean/reasoning_qwen_0008.png" width="1440" height="1080" alt="Dimension-level explanations for a snapshot with an overall score of 2.61.">
               </a>
             </div>
           </div>
@@ -320,8 +269,8 @@
 
     <footer>
       <div class="shell footer-inner">
-        <div><strong>PortraitAes</strong><span>Intent-Conditioned Structured Portrait Aesthetic Assessment</span></div>
-        <a href="https://github.com/hzxiong23/PortraitAes" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+        <span>PortraitAes · Project page</span>
+        <a href="https://github.com/hzxiong23/PortraitAes" target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
     </footer>
   </body>
