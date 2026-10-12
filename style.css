@@ -63,7 +63,7 @@ button { font: inherit; }
 }
 
 .hero-band {
-  padding: 104px 0 68px;
+  padding: 88px 0 52px;
   background: var(--background);
 }
 
@@ -162,7 +162,7 @@ sup {
   background: var(--surface);
 }
 
-.visual-band { padding: 0 0 88px; }
+.visual-band { padding: 0 0 64px; }
 
 .paper-figure {
   margin: 0;
@@ -191,7 +191,7 @@ sup {
 
 .paper-figure figcaption strong { color: var(--text); }
 
-.section-band { padding: 88px 0; }
+.section-band { padding: 64px 0; }
 
 .abstract-band,
 .benchmark-band,
@@ -256,7 +256,7 @@ sup {
   font-size: 15px;
 }
 
-.section-figure { margin-top: 42px; }
+.section-figure { margin-top: 36px; }
 
 .method-figure {
   max-width: 960px;
@@ -306,10 +306,10 @@ sup {
   font-size: 14px;
 }
 
-.example-overview { margin-top: 42px; }
+.example-overview { margin-top: 36px; }
 
 .reasoning-carousel {
-  margin-top: 28px;
+  margin-top: 24px;
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -358,7 +358,7 @@ sup {
 .reasoning-slide { display: block; }
 
 footer {
-  padding: 32px 0;
+  padding: 28px 0;
   border-top: 1px solid var(--line);
   background: var(--background);
 }
@@ -386,13 +386,13 @@ footer {
   }
 
   .example-shell { width: min(100% - 28px, 960px); }
-  .hero-band { padding: 78px 0 54px; }
+  .hero-band { padding: 64px 0 42px; }
   .paper-name { font-size: 54px; }
   .paper-subtitle { margin-top: 18px; font-size: 24px; }
   .authors { margin-top: 28px; gap: 6px 14px; font-size: 14px; }
   .affiliations { flex-direction: column; gap: 2px; font-size: 14px; }
-  .visual-band { padding-bottom: 68px; }
-  .section-band { padding: 68px 0; }
+  .visual-band { padding-bottom: 48px; }
+  .section-band { padding: 48px 0; }
   .section-title { font-size: 34px; }
   .section-copy { margin-top: 20px; font-size: 16px; }
   .info-grid, .result-grid { grid-template-columns: 1fr; }
@@ -400,7 +400,7 @@ footer {
   .info-card { min-height: 0; padding: 23px; }
   .paper-figure { padding: 8px 8px 0; border-radius: 12px; }
   .paper-figure figcaption { padding: 16px 8px 18px; }
-  .section-figure { margin-top: 32px; }
+  .section-figure { margin-top: 26px; }
   .reasoning-carousel { padding: 8px; border-radius: 12px; }
   .carousel-heading { padding: 7px 4px 13px; }
   .carousel-heading h3 { font-size: 16px; }
