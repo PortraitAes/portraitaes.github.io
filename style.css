@@ -122,6 +122,12 @@ sup {
   font-size: 14px;
 }
 
+.author-notes {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .resource-nav {
   margin-top: 28px;
   display: flex;
